@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: frankfurt-web-container
-          image: 882157583740.dkr.ecr.eu-central-1.amazonaws.com/frontend-frankfurt:db1da05
+          image: 882157583740.dkr.ecr.eu-central-1.amazonaws.com/frontend-frankfurt:09c4304
           ports:
             - containerPort: 3000
           resources:
