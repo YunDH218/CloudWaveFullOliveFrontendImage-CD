@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: virginia-web-container
-          image: 882157583740.dkr.ecr.us-east-1.amazonaws.com/frontend-virginia:f00172c
+          image: 882157583740.dkr.ecr.us-east-1.amazonaws.com/frontend-virginia:d3c6ac8
           ports:
             - containerPort: 3000
           resources:
