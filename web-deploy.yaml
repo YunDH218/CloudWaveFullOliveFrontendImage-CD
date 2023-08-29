@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: stg-web-container
-          image: 882157583740.dkr.ecr.ap-northeast-2.amazonaws.com/ecr-repository@sha256:c22fd6eb6db0189da3659369c84b4738536f91ca383fc943eb366380baa7bab6
+          image: 882157583740.dkr.ecr.ap-northeast-2.amazonaws.com/frontend-seoul:init
           ports:
             - containerPort: 3000
           resources:
