@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: virginia-web-deploy
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: virginia-web
+  template:
+    metadata:
+      labels:
+        app: virginia-web
+    spec:
+      containers:
+        - name: virginia-web-container
+          image: 882157583740.dkr.ecr.ap-northeast-2.amazonaws.com/frontend-virginia:init
+          ports:
+            - containerPort: 3000
+          resources:
+            limits:
+              cpu: 500m
+            requests:
+              cpu: 200m
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: virginia-web-service
+spec:
+  selector:
+    app: virginia-web
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: LoadBalancer
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: virginia-web-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: virginia-web-deploy
+  minReplicas: 1
+  maxReplicas: 50
+  targetCPUUtilizationPercentage: 50
