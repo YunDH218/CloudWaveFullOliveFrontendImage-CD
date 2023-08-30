@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: eu-web-container
-          image: 882157583740.dkr.ecr.eu-central-1.amazonaws.com/frontend-frankfurt:18a189d
+          image: 882157583740.dkr.ecr.eu-central-1.amazonaws.com/frontend-frankfurt:23bbd4c
           ports:
             - containerPort: 3000
           resources:
