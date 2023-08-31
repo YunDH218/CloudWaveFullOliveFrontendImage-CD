@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: ap-web-container
-          image: 882157583740.dkr.ecr.ap-northeast-2.amazonaws.com/frontend-seoul:7283f02
+          image: 882157583740.dkr.ecr.ap-northeast-2.amazonaws.com/frontend-seoul:1e960dd
           ports:
             - containerPort: 3000
           resources:
